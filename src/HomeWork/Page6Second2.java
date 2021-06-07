@@ -3,6 +3,8 @@ package HomeWork;
 public class Page6Second2 {
 public static void main(String[] args) {
 	int r = (int) (Math.random() * 101);
+	
+		
 	System.out.println("The number is" + " " +r);
 	
 	if (r>50)
