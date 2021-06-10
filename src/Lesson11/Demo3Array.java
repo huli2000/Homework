@@ -11,7 +11,7 @@ public static void main(String[] args) {
 	{
 	
 	arr[i]=(int)(Math.random()*21);
-	System.out.println(arr[i] + " , ");
+	System.out.print(arr[i] + " , ");
 	
     }
 	
