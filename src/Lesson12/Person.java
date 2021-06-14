@@ -4,11 +4,41 @@ public class Person {
 
 	//attributes
 	
-	int id;
-	String name;
-	
-	//private int
+	private int id;
+	private String name;
 	private int age;
+	
+	//constructors
+	
+	public Person () {
+		
+	}
+	
+	public Person (int id, String name, int age) {
+			this.id=id;
+			this.name=name;
+			this.age=age;
+			setAge(age);
+	
+	}
+	//methods
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	
 	//to publish it
 	public int getAge() {
@@ -30,5 +60,8 @@ public class Person {
 	void walk() {
 		System.out.println(name + " is walking");
 	}
+	
+	
+	
 }
 
