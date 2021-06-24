@@ -4,7 +4,7 @@ public class SalaryRaiser {
 public static void main(String[] args) {
 	
 	String name = "Moshe";
-	int r = (int) (Math.random() * (6000-5000) + 5000);		
+	int r = (int) (Math.random() * 1000 + 5000);		
 	//System.out.println("Dear xxx your salary is" + " " +r);
 	
 	int xxx = ((int)( r*1.1));

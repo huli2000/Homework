@@ -9,5 +9,11 @@ public static void main(String[] args) {
 	
 	System.out.println(part1 + " "+ (visitors+15) + " " + part2);
 	
+	
+	int grade = (int) (Math.random()*120+100);
+	System.out.println(grade);
 }
+
+
 }
+

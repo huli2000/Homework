@@ -1,4 +1,4 @@
-package Lesson12;
+package Lesson13;
 
 public class Point {
 
