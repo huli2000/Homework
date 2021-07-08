@@ -17,6 +17,7 @@ public class Test {
 			Citizen tikva = isr.new Citizen("Tikva", 106);
 			
 			
+			
 	}
 
 }
