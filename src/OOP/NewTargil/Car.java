@@ -7,7 +7,7 @@ public class Car {
 
 	public Car(int number, int speed) {
 		super();
-		this.number = number;
+		this.setNumber(number);
 		this.setSpeed(speed);
 	}
 
@@ -19,9 +19,16 @@ public class Car {
 		return number;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setNumber(int number) throws RuntimeException {
+		if (String.valueOf(number).length() == 9)  {
+			this.number = number;
+			return;
+
+		}
+		throw new RuntimeException("Plate number is out of range");
 	}
+
+	
 
 	public int getSpeed() {
 		return speed;
@@ -32,13 +39,13 @@ public class Car {
 			this.speed = speed;
 			return;
 		}
-	throw new RuntimeException("speed in out of range");
-	
+		throw new RuntimeException("speed in out of range");
+
 	}
 
 	@Override
 	public String toString() {
 		return "Car [number=" + number + ", speed=" + speed + "]";
 	}
-	
+
 }

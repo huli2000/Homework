@@ -6,6 +6,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Test {
 
+	public static final int MIN_LIMIT = 100_000_000;
+	public static final int MAX_LIMIT = 900_000_000;
+
 	public static void main(String[] args) {
 
 		Country c1 = new Country("Sweden");
@@ -24,7 +27,7 @@ public class Test {
 		for (int i = 0; i < highway.length; i++) {
 
 			highway[i] = new Highway(genName(5));
-			
+
 			Car[] c1 = generateCars(5);
 			highway[i].setCars(c1);
 		}
@@ -35,8 +38,8 @@ public class Test {
 	private static Car[] generateCars(int numOfCars) {
 		Car[] cars = new Car[numOfCars];
 		for (int i = 0; i < cars.length; i++) {
-			int genNumber = ThreadLocalRandom.current().nextInt();
-			int genSpeed = (int) (Math.random()*121);
+			int genNumber = ThreadLocalRandom.current().nextInt(MIN_LIMIT, MAX_LIMIT);
+			int genSpeed = (int) (Math.random() * 121);
 			cars[i] = new Car(genNumber, genSpeed);
 		}
 		return cars;

@@ -1,8 +1,12 @@
 package OOP.NewTargil;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class App {
+
+	public static final int MIN_LIMIT = 100_000_000;
+	public static final int MAX_LIMIT = 900_000_000;
 
 	public static void main(String[] args) {
 
@@ -10,18 +14,17 @@ public class App {
 		String[] highwayNames = { "aaa", "bbb", "ccc", "gagasg", "gsasg" };
 		Country country = new Country("Israel", genHighway(highways, highwayNames));
 		System.out.println(Arrays.toString(highways));
-		System.out.println("number of all cars in the country " +sumOfCars(country.getHighways()));
+		System.out.println("number of all cars in the country " + sumOfCars(country.getHighways()));
 		int x = country.getHighways()[0].getCars().length;
 		System.out.println("number of cars in each highway " + x);
-		double y = avgSpeed (country);
-		
-		
+		double y = avgSpeed(country);
+
 	}
 
 	private static double avgSpeed(Country country) {
 		for (int i = 0; i < country.getHighways().length; i++) {
-		Car[] cars=	country.getHighways()[i].getCars();
-		
+			Car[] cars = country.getHighways()[i].getCars();
+
 		}
 		return 0;
 	}
@@ -29,7 +32,7 @@ public class App {
 	private static int sumOfCars(Highway[] highways) {
 		int sumCars = 0;
 		for (int i = 0; i < highways.length; i++) {
-			sumCars +=	highways[i].getCars().length;
+			sumCars += highways[i].getCars().length;
 		}
 		return sumCars;
 	}
@@ -45,7 +48,7 @@ public class App {
 	public static Car[] popCar() {
 		Car[] cars = new Car[2];
 		for (int i = 0; i < cars.length; i++) {
-			int plateNumber = (int) (Math.random() * 100);
+			int plateNumber = ThreadLocalRandom.current().nextInt(MIN_LIMIT, MAX_LIMIT);
 			int carSpeed = (int) (Math.random() * 111);
 			cars[i] = new Car(plateNumber, carSpeed);
 		}
