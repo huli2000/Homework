@@ -14,7 +14,7 @@ public static void main(String[] args) {
 		System.out.println(Arrays.toString(arr));
 		//create temporary array of lenght 5
 		
-		int[]arr2 = new int[5];
+		int[]arr2 = new int[9];
 		
 		//copy elements from arr to arr2
 		

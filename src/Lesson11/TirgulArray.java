@@ -13,7 +13,7 @@ public class TirgulArray {
 		}
 	}
 }
-
-int[][] GM = new int[20][5];
-
-System.out.println(GM[2][3]);
+//
+//int[][] GM = new int[20][5];
+//
+//System.out.println(GM[2][3]);
