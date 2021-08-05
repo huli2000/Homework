@@ -1,7 +1,5 @@
 package OOPSchool;
 
-import java.util.Arrays;
-
 public class Teacher extends Person {
 
 	private String profession;
