@@ -4,11 +4,10 @@ import OOP.Targil.Car;
 
 public class FamilyCar extends Car {
 
-	public FamilyCar(int number, int speed) {
-		super(number, speed);
+	@Override
+	public String toString() {
+		return "FamilyCar [number=" + getNumber() + ", speed=" + getSpeed() + "]";
 	}
 
-	public FamilyCar() {
-	}
-
+	
 }

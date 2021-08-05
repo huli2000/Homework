@@ -1,7 +1,7 @@
 package OOPSchool;
 
 
-public class App {
+public class AppTestArea {
 	
 public static void main(String[] args) {
 	

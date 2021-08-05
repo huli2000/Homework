@@ -3,7 +3,7 @@ package OOPSchool;
 import java.util.Arrays;
 
 public class School {
-	
+
 	private ClassRoom[] classrooms = new ClassRoom[5];
 
 	public School(ClassRoom[] classrooms) {
@@ -23,8 +23,5 @@ public class School {
 	public void setClassrooms(ClassRoom[] classrooms) {
 		this.classrooms = classrooms;
 	}
-	
-	
-	
 
 }

@@ -18,7 +18,7 @@ public class Student extends Person {
 
 	@Override
 	public String toString() {
-		return "Student ["+ this.getName() +", age = "+this.getAge() +" grades=" + Arrays.toString(grades) + "]";
+		return "Student [" + this.getName() + ", age = " + this.getAge() + " grades=" + Arrays.toString(grades) + "]";
 	}
 
 }

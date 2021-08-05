@@ -14,6 +14,12 @@ public class SchoolStatistics {
 
 		schoolAvg(school);
 
+		// Part2: class average
+		classAverage(school.getClassrooms());
+
+		// Part3: school average per profession
+		schoolAveragePerProfession(school);
+
 	}
 
 	private static void schoolAvg(School school) {
@@ -28,20 +34,32 @@ public class SchoolStatistics {
 	}
 
 	private static int classTotal(ClassRoom classRoom) {
-	int total = 0;
-	for (Student student : classRoom.getStudents()) {
-		total += studentTotalScore(student);
-	
+		int total = 0;
+		for (Student student : classRoom.getStudents()) {
+			total += studentTotalScore(student);
+
 		}
 		return total;
 	}
 
+	private static void classAverage(ClassRoom[] classRooms) {
+
+		for (ClassRoom classRoom : classRooms) {
+			int totalScore = 0;
+			for (Student student : classRoom.getStudents()) {
+				totalScore += studentTotalScore(student);
+			}
+			System.out.println("Class name: " + classRoom.getName() + " Class average "
+					+ totalScore / (classRoom.getStudents().length * 6));
+		}
+	}
+
 	private static int studentTotalScore(Student student) {
 		int total = 0;
-		for (Grade grade: student.getGrades()) {
+		for (Grade grade : student.getGrades()) {
 			total += grade.getScore();
 		}
-	
+
 		return total;
 	}
 
@@ -55,8 +73,53 @@ public class SchoolStatistics {
 			classrooms[i] = new ClassRoom(name, teacher, students);
 		}
 		System.out.println(Arrays.toString(classrooms));
-		
+
 		return classrooms;
+	}
+
+	private static void schoolAveragePerProfession(School school) {
+		int totalMath, totalChemistry, totalGeography, totalLiterature, totalPhysics, totalSports;
+		totalMath = totalChemistry = totalGeography = totalLiterature = totalPhysics = totalSports = 0;
+
+		int countMath, countChemistry, countGeography, countLiterature, countPhysics, countSports;
+		countMath = countChemistry = countGeography = countLiterature = countPhysics = countSports = 0;
+
+		for (ClassRoom classRoom : school.getClassrooms()) {
+			for (Student student : classRoom.getStudents()) {
+				for (Grade grade : student.getGrades()) {
+					switch (grade.getProfession()) {
+					case "math" -> {
+						totalMath += grade.getScore();
+						countMath++;
+					}
+					case "chemistry" -> {
+						totalChemistry += grade.getScore();
+						countChemistry++;
+					}
+					case "geography" -> {
+						totalGeography += grade.getScore();
+						countGeography++;
+					}
+					case "literature" -> {
+						totalLiterature += grade.getScore();
+						countLiterature++;
+					}
+					case "physics" -> {
+						totalPhysics += grade.getScore();
+						countPhysics++;
+					}
+					case "sports" -> {
+						totalSports += grade.getScore();
+						countSports++;
+					}
+					}
+				}
+			}
+		}
+		System.out.print(
+				"math: " + totalMath / countMath + "\nchemistry: " + totalChemistry / countChemistry + "\ngeography: "
+						+ totalGeography / countGeography + "\nliterature: " + totalLiterature / countLiterature
+						+ "\nphysics: " + totalPhysics / countPhysics + "\nsports: " + totalSports / countSports);
 	}
 
 	private static Student[] getRandomStudents() {
